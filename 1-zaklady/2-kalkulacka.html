@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Kalkulačka v JavaScriptu</title>
+</head>
+<body>
+    <script>
+        let pokracovat = true;
+        while (pokracovat) {
+            let prvni = parseFloat(prompt("Zadejte 1. číslo:"));
+            let druhe = parseFloat(prompt("Zadejte 2. číslo:"))
+            let operace = prompt("Zadejte početní operaci (sčítání \'+\', odečítání \'-\', násobení \'*\', dělení \':\'):");
+
+            switch (operace) {
+                // sčítání
+                case "+":
+                    document.write("Výsledek: " + prvni + " "+ operace + " "+  druhe + "  = " + (prvni + druhe));
+                    break;
+                // odečítání
+                case "-":
+                    document.write("Výsledek: " + prvni + " "+ operace + " "+  druhe + "  = " + (prvni - druhe));
+                    break;
+                // násobení
+                case "*":
+                    document.write("Výsledek: " + prvni + " "+ operace + " "+  druhe + "  = " + (prvni * druhe));
+                    break; 
+                // dělení
+                case ":":
+                    if (druhe == 0) {
+                        document.write("Nelze dělit nulou")
+                    }
+                    else {
+                        document.write("Výsledek: " + prvni + " "+ operace + " "+  druhe + "  = " + (prvni / druhe));
+                    }
+                    break;
+                // neplatná operace
+                default:
+                    document.write("Neplatná operace");
+            }
+            // možnost dalšího příkladu
+            pokracovat = confirm("Chcete vypočítat další příklad?");
+            document.write("<br>");
+        }
+        document.write("Děkujeme za použití kalkulačky");
+    </script>
+</body>
+</html>

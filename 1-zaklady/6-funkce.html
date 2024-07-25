@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6. Funkce v JavaScriptu</title>
+</head>
+<body>
+    <script>
+        let polomer = parseFloat(prompt("Zadejte poloměr kruhu (v metrech):"));
+
+        function obsah_kruhu(polomer) {
+            return 3.14 * (polomer * polomer);
+        }
+
+        function obvod_kruhu(polomer) {
+            return 2 * 3.14 * polomer;
+        }
+
+        document.write("Poloměr kruhu je " + polomer + " metrů <br>" +
+                        "Obsah kruhu je " + obsah_kruhu(polomer) + " metrů čtverečných <br>" +
+                        "Obvod kruhu je " + obvod_kruhu(polomer) + " metrů");
+    </script>
+</body>
+</html>

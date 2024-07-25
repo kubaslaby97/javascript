@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. Pole čísel v JavaScriptu</title>
+</head>
+<body>
+    <script>
+        let cisla = [];
+
+        for (let i = 0; i < 50; i++) {
+            cisla[i] = (i + 1) * 2;
+        }
+
+        for (cislo of cisla) {
+            document.write(cislo + " ");
+        }
+    </script>
+</body>
+</html>

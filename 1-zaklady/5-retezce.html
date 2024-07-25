@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5. Práce s textovými řetězci v JavaScriptu</title>
+</head>
+<body>
+    <script>
+        let text = prompt("Zadejte slova oddělené čárkou:");
+        let slova = text.split(',');
+
+        for (let slovo of slova) {
+            document.write(slovo + "</br>")
+        }
+    </script>
+</body>
+</html>
