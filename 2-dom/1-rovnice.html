@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Kvadratická rovnice pomocí DOM v JavaScriptu</title>
+</head>
+<body>
+    <h1>Výpočet kvadratické rovnice</h1>
+    <input id="a_x2"> x2 + <input id="b_x"> x + <input id="c"><br><br>
+    <button onclick="vyresit()">Vyřešit</button>
+
+    <p id="vysledek">Zatím nemáte vyřešenou žádnou rovnici.</p>
+
+    <script>
+        function vyresit() {
+            let a = parseFloat(document.getElementById("a_x2").value);
+            let b = parseFloat(document.getElementById("b_x").value);
+            let c = parseFloat(document.getElementById("c").value);
+
+            // výpočet diskriminantu b2 - 4*a*c
+            let d = (b * b) - 4 * a * c;
+
+            if (d < 0 ) {
+                document.getElementById("vysledek").textContent = "Vámi zadaná rovnice " + a + "x2 + " + b + "x + " + c + " nemá řešení v oboru reálných čísel.";
+            }
+            else if (d == 0) {
+                let x = (-b + Math.sqrt(d)) / 2 * a
+                document.getElementById("vysledek").textContent = "Vámi zadaná rovnice " + a + "x2 + " + b + "x + " + c + " má jeden kořen " + x +".";
+            }
+            else {
+                let x1 = (-b + Math.sqrt(d)) / 2 * a
+                let x2 = (-b - Math.sqrt(d)) / 2 * a
+                document.getElementById("vysledek").textContent = "Vámi zadaná rovnice " + a + "x2 + " + b + "x + " + c + " má dva kořeny " + x1 + " a " + x2 + ".";
+            }
+        }
+    </script>
+</body>
+</html>
