@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Odpočet pomocí DOM v JavaScriptu</title>
+</head>
+<body>
+    <h1>Odpočet</h1>
+    Do konce roku 2024 zbývá
+    <p id="odpocet"></p>
+    <script>
+        // definice časových jednotek v milisekundách
+        const sekunda = 1000; 
+        const minuta = sekunda * 60;
+        const hodina = minuta * 60;
+        const den = hodina * 24;  
+        const rok = den * 365.24219;
+        
+        // konečné datum
+        const odpocet = new Date("2024-12-31 23:59:59").getTime();
+
+        // nastavení odpočtu
+        setInterval(function() {
+            let nyni = new Date().getTime();
+            let rozdil = odpocet - nyni;
+
+            let roky = Math.floor(rozdil / rok);
+            let dny = Math.floor((rozdil % rok) / den);
+            let hodiny = Math.floor((rozdil % den) / hodina);
+            let minuty = Math.floor((rozdil % hodina) / minuta);
+            let sekundy = Math.floor((rozdil % minuta) / sekunda);
+
+            // ověření, zda vypršel čas
+            if (rozdil > 0) {
+                document.getElementById("odpocet").textContent = roky + " let " + dny + " dnů " + hodiny + " hodin " + minuty + " minut a " + sekundy + " sekund"
+            }
+            else {
+                document.getElementById("odpocet").textContent = "Rok se s rokem sešel";
+            }
+        }, sekunda);
+    </script>
+</body>
+</html>

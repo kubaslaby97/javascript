@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Animace pomocí DOM v JavaScriptu</title>
+</head>
+<body>
+    <h1>Animace</h1>
+    <p id="blikani">Blikající text rychlostí půl sekundy</p>
+    <script>
+        let interval_blikani = 500;
+
+        setInterval(function () {
+            if (document.getElementById("blikani").style.visibility == "hidden") {
+                document.getElementById("blikani").style.visibility = ""
+            }
+            else {
+                document.getElementById("blikani").style.visibility = "hidden"
+            }
+        }, interval_blikani);
+    </script>
+</body>
+</html>
